@@ -1,0 +1,36 @@
+{
+	"name": "EV WIN",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 544221808153340
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 823157199778993,
+					"parameters": {
+						"object": "home"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 702417286156384,
+					"parameters": {
+						"layout": "HOME PAGE"
+					}
+				}
+			],
+			"sid": 922813569992589
+		}
+	],
+	"sid": 397962359558799
+}

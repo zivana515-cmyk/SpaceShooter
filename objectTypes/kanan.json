@@ -1,0 +1,60 @@
+{
+	"name": "kanan",
+	"plugin-id": "Sprite",
+	"sid": 641063395084578,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 210,
+						"height": 210,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8505613,
+						"collisionPoly": {
+							"points": [
+								0.8761904761904762,
+								1,
+								0.12380952380952381,
+								1,
+								0.014285714285714235,
+								0.8809523809523809,
+								0.014285714285714235,
+								0.11904761904761907,
+								0.11904761904761907,
+								0.014285714285714235,
+								0.8809523809523809,
+								0.014285714285714235,
+								0.9857142857142858,
+								0.11904761904761907,
+								0.9761904761904762,
+								0.9
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 583576950331423,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

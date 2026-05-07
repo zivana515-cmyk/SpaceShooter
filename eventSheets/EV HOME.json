@@ -1,0 +1,36 @@
+{
+	"name": "EV HOME",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 551950653170319
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 337837031424750,
+					"parameters": {
+						"object": "play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 618918750443497,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 272511511847407
+		}
+	],
+	"sid": 139729791518589
+}

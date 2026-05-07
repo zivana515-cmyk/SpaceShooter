@@ -1,0 +1,334 @@
+{
+	"name": "EV GAME",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Lives",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 372561934289818
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 868244379253437
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 511218909202911,
+					"parameters": {
+						"object": "kiri"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "player",
+					"sid": 392959373829927,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 255913867090054
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 478328950601223,
+					"parameters": {
+						"object": "kanan"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "player",
+					"sid": 404325374459263,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 748227608189262
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 480985565139482,
+					"parameters": {
+						"object": "tembak",
+						"type": "start"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "player",
+					"sid": 712403756906129,
+					"parameters": {
+						"object": "laser",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "laser",
+					"sid": 781446708180131,
+					"parameters": {
+						"angle": "-90"
+					}
+				}
+			],
+			"sid": 721998776114756
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 882360356075374,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 760315206678146,
+					"parameters": {
+						"object-to-create": "enemy",
+						"layer": "0",
+						"x": "random(200,900)",
+						"y": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "enemy",
+					"sid": 913663098417920,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "random (100,200)"
+					}
+				}
+			],
+			"sid": 271538031796234
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "enemy",
+					"sid": 131599522499288,
+					"parameters": {
+						"object": "laser"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "enemy",
+					"sid": 387082086535788
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 146833715970779,
+					"parameters": {
+						"variable": "score",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "laser",
+					"sid": 382193787186927
+				},
+				{
+					"id": "set-text",
+					"objectClass": "score",
+					"sid": 624658654559846,
+					"parameters": {
+						"text": "\"score\"&score"
+					}
+				}
+			],
+			"sid": 463945895289389
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "enemy",
+					"sid": 779123077939290,
+					"parameters": {
+						"object": "player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "enemy",
+					"sid": 215678876543029
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 557225990936961,
+					"parameters": {
+						"variable": "Lives",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "live",
+					"sid": 927112443821985,
+					"parameters": {
+						"text": "\"lives\"&Lives"
+					}
+				}
+			],
+			"sid": 762280951584500
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 266178112609088,
+					"parameters": {
+						"first-value": "lives",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 174263411605639,
+					"parameters": {
+						"layout": "game over"
+					}
+				}
+			],
+			"sid": 102863928579399
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 750644362042747,
+					"parameters": {
+						"first-value": "score",
+						"comparison": 0,
+						"second-value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 712275222957428,
+					"parameters": {
+						"layout": "WIN"
+					}
+				}
+			],
+			"sid": 104385974705963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 240886681126702
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 839872500779076,
+					"parameters": {
+						"reset-static": false
+					}
+				}
+			],
+			"sid": 809636080885298
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 406252419450891
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "score",
+					"sid": 959104062002887,
+					"parameters": {
+						"text": "\"score:\"&score"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "live",
+					"sid": 544771055846759,
+					"parameters": {
+						"text": "\"lives: \"&lives "
+					}
+				}
+			],
+			"sid": 535090248011740
+		}
+	],
+	"sid": 704828623091098
+}

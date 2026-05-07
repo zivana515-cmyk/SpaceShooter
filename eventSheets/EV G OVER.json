@@ -1,0 +1,36 @@
+{
+	"name": "EV G OVER",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 294218843078388
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 799274130593969,
+					"parameters": {
+						"object": "reply"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 447631384116903,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 596621732928682
+		}
+	],
+	"sid": 738681677433498
+}

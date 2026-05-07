@@ -1,0 +1,72 @@
+{
+	"name": "laser",
+	"plugin-id": "Sprite",
+	"sid": 106980241666683,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 559962348209798
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 57,
+						"height": 13,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8319785,
+						"collisionPoly": {
+							"points": [
+								1,
+								0.23076923076923078,
+								1,
+								0.6923076923076923,
+								0.9824561403508771,
+								0.8461538461538461,
+								0.9649122807017544,
+								0.9230769230769231,
+								0.9298245614035088,
+								1,
+								0.052631578947368474,
+								1,
+								0,
+								0.7692307692307693,
+								0,
+								0.23076923076923078,
+								0.052631578947368474,
+								0,
+								0.9298245614035088,
+								0,
+								0.9649122807017544,
+								0.07692307692307693
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 517014307426033,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
